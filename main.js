@@ -12,7 +12,9 @@ $.getJSON("forms.json", function(json) {
       "<p><a href=\"#" + formheaderId + "\">" + form.title + "</a></p>"
     );
     $("#base").append(
-      "<h3 id=\"" + formheaderId + "\">" + form.title + "</h3>" +
+      "<h3 id=\"" + formheaderId + "\">" + form.title +
+        " <a href=\"#\" class=\"small\">вверх</a>" +
+      "</h3>" +
       "<p>" + form.about + "</p>" +
       "<form id=\"" + formId + "\"></form>"
     );
