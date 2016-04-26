@@ -58,7 +58,8 @@ $.getJSON("forms.json", function(json) {
           controlId = formId + "control" + controlCounter;
           value = $("#" + controlId).val();
           if (value === "") value = "_____";
-          text = text.replace("{{"+ controlCounter + "}}", value);
+          var regexp = new RegExp("\\{\\{"+ controlCounter + "\\}\\}", "g");
+          text = text.replace(regexp, value);
         });
         $("#" + formId + "textarea").val(text);
       });
